@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Claim>
+
+    @{
+        ViewBag.Title = "List of Claims";
+    }
+    
+    <h1>Claims</h1>
+    
+    <a asp-action="Create">Create New Claim</a>
+    
+    <table>
+        <thead>
+            @Html.DisplayNameFor(model => model.Name)
+        </thead>
+        <tbody>
+            @foreach (Claim claim in Model)
+            { 
+                <tr>
+                    <td>    
+                        @Html.DisplayFor(modelItem => claim.Name)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@claim.ClaimId">Details</a>
+                        <a asp-action="Edit" asp-route-id="@claim.ClaimId">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@claim.ClaimId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,27 @@
+﻿@model Claim
+@{
+    ViewBag.Title = "Claim Details";
+}
+<h1>@Model.Name Details</h1>
+
+
+<h4>Products</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Description</td>
+            <td>@Model.ClaimDate</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
